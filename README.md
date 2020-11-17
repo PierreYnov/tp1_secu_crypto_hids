@@ -55,16 +55,11 @@ Aide un est outil de suivi des modifications au système de fichiers. Il crée u
 
 **- Expliquer les fichiers et attributs surveillés :**
 
-Tout les fichiers de base   
+De base, si on ne spécifie aucun répertoire, tout les fichiers du système seront monitorés.
 
-attributs = permissions du fichier,user ownership, group ownership   et type de fichier
+Voici une liste ci-dessous des attributs qu'on peut surveiller sur les fichiers :
 
 ![](https://i.gyazo.com/b4e6072451314448f0dec0a6e7d7ed8f.png)
-    53 # Files that change their contents during system operation
-    54 VarFile = OwnerMode+n+l+X
-    55 
-    56 # Directories that change their contents during system operation
-    57 VarDir = OwnerMode+n+i+X
 
 
 On passe à l'éxécution de l'HIDS :
