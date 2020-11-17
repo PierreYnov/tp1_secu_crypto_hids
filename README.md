@@ -120,6 +120,29 @@ Passage à la surveillance du blog :
 
 **- Expliquer les modifications et les justifier**
 
+On modifie le ``aide.conf``
+
+    rule = p+n+u+g+s+m+c+xattrs
+
+    /var/lib/www/wordpress rule
+
+On va init avec la nouvelle conf ``aide -c /etc/aide/aide.conf -i``
+
+On remplace la db :
+
+``cp /var/lib/aide/aide.db{.new,}``
+
+On check : 
+
+``aide --check --config=/etc/aide/aide.conf``
+
+![](img/check_wp.png)
+
+On modifie une ligne sur le fichier ``/var/lib/www/wordpress/index.php`` et on re-vérifie.
+
+![](img/second_check.png) 
+
+Les modifications sont bien détectées.
 
 ##  Renforcement de la sécurité de l'HIDS : utilisation de la cryptographie pour signer la base de données.
 
