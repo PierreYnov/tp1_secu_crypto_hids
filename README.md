@@ -164,6 +164,8 @@ Vu que les fonctionnalités permettant de signer le fichier de configuration et 
 
 **- Quelle autre mesure indispensable peut-on prendre pour s'assurer que ce soit la bonne BDD ?**
 
+Pour s'assurer que ce soit la bonne BDD, on peut placer le fichier originale de la BDD sur une clé USB ou un stockage Cloud, afin de pouvoir à tout moment le comparer manuellement avec la signature du fichier BDD sur le serveur.
+
 ## Automatisation des tâches 
 
 - Création d'une tâche CRON qui exécute ``Aide`` avec un contrôle de la signature de base.
@@ -172,5 +174,8 @@ Vu que les fonctionnalités permettant de signer le fichier de configuration et 
 
 **- Quels cas peuvent donner de faux positifs ?**
 
+Un faux positif peut venir dans le cas d'un update de WordPress, qui modifiera plusieurs dizaines de fichiers (voire centaines) et modifiera totalement la BDD ou même tout simplement lorsque l'administrateur souhaitera ajouter des modules à son WP ou modifier du texte.
+
 **- Rédigez une procédure permettant de prévenir ces FP :**
 
+Il faut prévoir un update de la BDD originelle après chaque modification/update du WP. Et ainsi ne pas pouvoir avoir de FP.
