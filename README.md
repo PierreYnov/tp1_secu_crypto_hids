@@ -153,8 +153,16 @@ Mise en oeuvre :
 
 **- Expliquer les modifications et les justifier**
 
-**- Quelle autre mesure indispensable peut-on prendre pour s'assurer que ce soit la bonne BDD ?**
+Vu que les fonctionnalités permettant de signer le fichier de configuration et la BDD ne sont plus sur notre version de AIDE. Nous allons développer un script Python qui fera ces checks et nous dira si il y a eu des modifications ou non.
 
+
+- Programme hash_to_txt.py = on stocke le hash des fichiers originaux conf et bdd dans un fichier texte grâce à ce script Python3
+
+- Programme compare.py = il compare le fichier bdd actuel / le fichier de conf avec le hash enregistré dans le fichier texte, et dit si c'est le même ou si il y a eu altération
+
+![](img/hash.png)
+
+**- Quelle autre mesure indispensable peut-on prendre pour s'assurer que ce soit la bonne BDD ?**
 
 ## Automatisation des tâches 
 
