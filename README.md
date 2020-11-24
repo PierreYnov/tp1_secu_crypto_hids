@@ -174,6 +174,11 @@ Regarder l'**heure de dernière modification** du fichier BDD est aussi une mesu
 
 **- Expliquer les modifications**
 
+Notre CRON : 
+
+![](img/crontab.png)
+
+
 **- Quels cas peuvent donner de faux positifs ?**
 
 Un faux positif peut venir dans le cas d'un **update** de WordPress, qui modifiera plusieurs dizaines de fichiers (voire centaines) et modifiera totalement la BDD ou même tout simplement lorsque l'administrateur souhaitera **ajouter des modules** à son WP ou **modifier** du texte.
