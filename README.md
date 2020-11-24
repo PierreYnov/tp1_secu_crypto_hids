@@ -153,18 +153,20 @@ Mise en oeuvre :
 
 **- Expliquer les modifications et les justifier**
 
-Vu que les fonctionnalités permettant de signer le fichier de configuration et la BDD ne sont plus sur notre version de AIDE. Nous allons développer un script Python qui fera ces checks et nous dira si il y a eu des modifications ou non.
+Vu que les fonctionnalités permettant de signer le fichier de configuration et la BDD ne sont plus sur notre version de AIDE. Nous allons développer un script Python qui fera ces vérifications par signature MD5 et nous dira si il y a eu des modifications ou non.
 
 
-- Programme hash_to_txt.py = on stocke le hash des fichiers originaux conf et bdd dans un fichier texte grâce à ce script Python3
+- ``hash_to_txt.py`` = on stocke le hash des fichiers originaux conf et bdd dans un fichier texte grâce à ce script Python3
 
-- Programme compare.py = il compare le fichier bdd actuel / le fichier de conf avec le hash enregistré dans le fichier texte, et dit si c'est le même ou si il y a eu altération
+- ``compare.py`` = il compare le fichier bdd actuel / le fichier de conf avec le hash enregistré dans le fichier texte, et dit si c'est le même ou si il y a eu altération
 
 ![](img/hash.png)
 
 **- Quelle autre mesure indispensable peut-on prendre pour s'assurer que ce soit la bonne BDD ?**
 
-Pour s'assurer que ce soit la bonne BDD, on peut placer le fichier originale de la BDD sur une clé USB ou un stockage Cloud, afin de pouvoir à tout moment le comparer manuellement avec la signature du fichier BDD sur le serveur.
+Pour s'assurer que ce soit la bonne BDD, on peut placer le fichier originale de la BDD sur une **clé USB ou un stockage Cloud**, afin de pouvoir à tout moment le comparer manuellement avec la signature du fichier BDD sur le serveur.
+
+Regarder l'**heure de dernière modification** du fichier BDD est aussi une mesure à prendre.
 
 ## Automatisation des tâches 
 
@@ -174,8 +176,8 @@ Pour s'assurer que ce soit la bonne BDD, on peut placer le fichier originale de 
 
 **- Quels cas peuvent donner de faux positifs ?**
 
-Un faux positif peut venir dans le cas d'un update de WordPress, qui modifiera plusieurs dizaines de fichiers (voire centaines) et modifiera totalement la BDD ou même tout simplement lorsque l'administrateur souhaitera ajouter des modules à son WP ou modifier du texte.
+Un faux positif peut venir dans le cas d'un **update** de WordPress, qui modifiera plusieurs dizaines de fichiers (voire centaines) et modifiera totalement la BDD ou même tout simplement lorsque l'administrateur souhaitera **ajouter des modules** à son WP ou **modifier** du texte.
 
 **- Rédigez une procédure permettant de prévenir ces FP :**
 
-Il faut prévoir un update de la BDD originelle après chaque modification/update du WP. Et ainsi ne pas pouvoir avoir de FP.
+Il faut prévoir un **update de la BDD** originelle après chaque modification/update du WP. Et ainsi ne pas pouvoir avoir de FP.
