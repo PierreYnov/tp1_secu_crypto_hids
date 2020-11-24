@@ -2,11 +2,11 @@
 ## Installation et configuration du HIDS sur un serveur web Linux Debian
 
 ## Classe : B3B
-## Elèves : Emma Durand **[@emmadrd912](https://github.com/emmadrd912)** et Pierre Ceberio **[@PierreYnov](https://github.com/PierreYnov)** 
+## Elèves : Emma Durand **[@emmadrd912](https://github.com/emmadrd912)** et Pierre Ceberio **[@PierreYnov](https://github.com/PierreYnov)**
 
 ![](https://1.bp.blogspot.com/-w9niJ04eymc/UcwSC3wVmeI/AAAAAAAADfI/f_io0yqor9Y/s1600/aide_logo.gif)
 
-# Sommaire 
+# Sommaire
 
 - [Le lab](#le-lab)
 - [Découverte de l'outil](#d%C3%A9couverte-de-loutil)
@@ -19,13 +19,13 @@
 - [Automatisation des tâches](#automatisation-des-t%C3%A2ches)
 
 
-## Le Lab 
+## Le Lab
 
 Machine ``Debian`` avec ``Apache`` et un blog ``Wordpress`` qui tourne.
 
 ## Découverte de l'outil
 
-### I. Rappels théorique sur la détection d'intrusion 
+### I. Rappels théorique sur la détection d'intrusion
 
 **- Qu'est-ce qu'un HIDS ?**
 
@@ -40,10 +40,10 @@ Un IDS classique va être installé sur le réseau pour détecter les intrusions
 
 **- Comment la " cryptographie " de ``Aide`` permet-elle de contrôler l'intégrité des fichiers ? Quels sont les algorithmes qui interviennent ?**
 
-Aide créer une base de données à partir de règles d'expressions configurées dans un fichier. Une fois la base initialisée, il utilise un algorithme pour contrôler l'intégrité du fichier. 
+Aide créer une base de données à partir de règles d'expressions configurées dans un fichier. Une fois la base initialisée, il utilise un algorithme pour contrôler l'intégrité du fichier.
 Les algorithmes qui interviennent sont : ``md5, sha256, rmd160, tiger, haval, gost, crc32`` etc ...
 
-### II. Découverte de AIDE 
+### II. Découverte de AIDE
 
 **- Expliquez le fonctionnement de ``Aide``**
 
@@ -51,7 +51,7 @@ Aide un est outil de suivi des modifications au système de fichiers. Il crée u
 
 ## Configuration de l'outil
 
-### I. Préparation du fichier de configuration 
+### I. Préparation du fichier de configuration
 
 **- Expliquer les fichiers et attributs surveillés :**
 
@@ -71,7 +71,7 @@ On passe à l'exécution de l'HIDS :
     - passage au test de cette nouvelle protection mise en place :
 
         - 1) Modifier un fichier qui est surveillé
-        - 2) Reproduire la manipulation 
+        - 2) Reproduire la manipulation
 
 **- Constater et expliquer en détail toutes les manipulations**
 
@@ -102,13 +102,13 @@ AIDE a bien detecté les changements ! On peut voir dans les entrées changées 
 
 ![](img/etc_passwd.png)
 
-### II. Personnalisation de la configuration 
+### II. Personnalisation de la configuration
 
 Passage à la surveillance du blog :
 
-    - vérifier le bon fonctionnement du service 
+    - vérifier le bon fonctionnement du service
 
-    - modifier la configuration de ``Aide`` pour " correspondre au nouveau besoin de sécurité " 
+    - modifier la configuration de ``Aide`` pour " correspondre au nouveau besoin de sécurité "
         nouveau besoin = vérifier que les fichiers sources du blog ne sont pas modifiés, hormis ceux disponible en écriture pour une personne depuis internet
 
     - effectuer un nouveau test d'intégrité
@@ -127,7 +127,7 @@ On remplace la db :
 
 ``cp /var/lib/aide/aide.db{.new,}``
 
-On check : 
+On check :
 
 ``aide --check --config=/etc/aide/aide.conf``
 
@@ -135,7 +135,7 @@ On check :
 
 On modifie une ligne sur le fichier ``/var/lib/www/wordpress/index.php`` et on revérifie.
 
-![](img/second_check.png) 
+![](img/second_check.png)
 
 Les modifications sont bien détectées.
 
@@ -168,7 +168,7 @@ Pour s'assurer que ce soit la bonne BDD, on peut placer le fichier originale de 
 
 Regarder l'**heure de dernière modification** du fichier BDD est aussi une mesure à prendre.
 
-## Automatisation des tâches 
+## Automatisation des tâches
 
 - Création d'une tâche CRON qui exécute ``Aide`` avec un contrôle de la signature de base.
 
