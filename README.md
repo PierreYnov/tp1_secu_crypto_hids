@@ -2,7 +2,7 @@
 ## Installation et configuration du HIDS sur un serveur web Linux Debian
 
 ## Classe : B3B
-## Elèves : DURAND Emma & CEBERIO Pierre
+## Elèves : Emma Durand **[@emmadrd912](https://github.com/emmadrd912)** et Pierre Ceberio **[@PierreYnov](https://github.com/PierreYnov)** 
 
 ![](https://1.bp.blogspot.com/-w9niJ04eymc/UcwSC3wVmeI/AAAAAAAADfI/f_io0yqor9Y/s1600/aide_logo.gif)
 
